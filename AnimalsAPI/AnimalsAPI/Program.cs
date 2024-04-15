@@ -11,7 +11,9 @@ public class Program
         builder.Services.AddSwaggerGen();
         builder.Services.AddControllers();
         builder.Services.AddScoped<IAnimalService, AnimalService>();
+        builder.Services.AddScoped<IAppointmentService, AppointmentService>();
         builder.Services.AddSingleton<IAnimalRepository, AnimalRepository>();
+        builder.Services.AddSingleton<IAppointmentRepository, AppointmentRepository>();
 
         var app = builder.Build();
 

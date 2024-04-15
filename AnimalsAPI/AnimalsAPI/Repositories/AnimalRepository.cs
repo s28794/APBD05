@@ -29,7 +29,7 @@ public class AnimalRepository : IAnimalRepository
         return null;
     }
 
-    public int CreateAnimal(Animal animal)
+    public int AddAnimal(Animal animal)
     {
         (int id, string name, Category category, double weight, string color) = animal;
         Animal newAnimal = new(id, name, category, weight, color);

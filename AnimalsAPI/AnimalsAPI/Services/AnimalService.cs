@@ -35,7 +35,7 @@ public class AnimalService : IAnimalService
             }
         }
 
-        return _animalRepository.CreateAnimal(animal);
+        return _animalRepository.AddAnimal(animal);
     }
 
     public int UpdateAnimal(Animal animal)

@@ -9,7 +9,7 @@ namespace AnimalsAPI.Controllers;
 [ApiController]
 public class AnimalController : ControllerBase
 {
-    private IAnimalService _animalService;
+    private readonly IAnimalService _animalService;
 
     public AnimalController(IAnimalService animalService)
     {
