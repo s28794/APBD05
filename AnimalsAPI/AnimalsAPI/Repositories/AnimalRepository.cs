@@ -31,7 +31,9 @@ public class AnimalRepository : IAnimalRepository
 
     public int CreateAnimal(Animal animal)
     {
-        _animals.Add(animal);
+        (int id, string name, Category category, double weight, string color) = animal;
+        Animal newAnimal = new(id, name, category, weight, color);
+        _animals.Add(newAnimal);
         return 1;
     }
 

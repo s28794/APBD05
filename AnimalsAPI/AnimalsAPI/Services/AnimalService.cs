@@ -23,7 +23,7 @@ public class AnimalService : IAnimalService
         return _animalRepository.GetAnimal(animalId);
     }
 
-    public int CreateAnimal(Animal animal)
+    public int AddAnimal(Animal animal)
     {
         var enumerable = _animalRepository.GetAnimals();
 

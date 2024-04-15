@@ -1,7 +1,6 @@
 ﻿using AnimalsAPI.Models;
 using AnimalsAPI.Services;
 using AnimalsAPI.Exceptions;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnimalsAPI.Controllers;
@@ -38,14 +37,14 @@ public class AnimalController : ControllerBase
     }
     
     [HttpPost]
-    public IActionResult CreateAnimal(Animal animal)
+    public IActionResult AddAnimal(Animal animal)
     {
         try
         {
-            _animalService.CreateAnimal(animal);
+            _animalService.AddAnimal(animal);
             return StatusCode(StatusCodes.Status201Created);
         }
-        catch (NotUniqueIdException e)
+        catch (NotUniqueIdException)
         {
             return StatusCode(StatusCodes.Status400BadRequest);
         }
